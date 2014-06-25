@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E2755897-7E54-4B9D-A5E7-8B672C17F4AE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FelixAPI</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>74073364-30B2-4844-B2C4-00BE9ABC290B</key>
+		<string>https://github.com/felixwcf/iOSFelixAPIx.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FelixAPI.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>74073364-30B2-4844-B2C4-00BE9ABC290B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/felixwcf/iOSFelixAPIx.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>74073364-30B2-4844-B2C4-00BE9ABC290B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>74073364-30B2-4844-B2C4-00BE9ABC290B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>gitiOSFelixAPI</string>
+		</dict>
+	</array>
+</dict>
+</plist>

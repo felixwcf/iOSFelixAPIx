@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F9158D76195AFD1600B4EC36 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9158D74195AFD1600B4EC36 /* UserDetailViewController.m */; };
+		F9158D77195AFD1600B4EC36 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9158D75195AFD1600B4EC36 /* UserDetailViewController.xib */; };
+		F9158D7F195B048900B4EC36 /* SubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9158D7E195B048900B4EC36 /* SubTableViewCell.m */; };
+		F9158D83195B049A00B4EC36 /* femalePic.png in Resources */ = {isa = PBXBuildFile; fileRef = F9158D80195B049A00B4EC36 /* femalePic.png */; };
+		F9158D84195B049A00B4EC36 /* lineDot.png in Resources */ = {isa = PBXBuildFile; fileRef = F9158D81195B049A00B4EC36 /* lineDot.png */; };
+		F9158D85195B049A00B4EC36 /* malePic.png in Resources */ = {isa = PBXBuildFile; fileRef = F9158D82195B049A00B4EC36 /* malePic.png */; };
+		F9158D88195B051600B4EC36 /* UserDetailCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = F9158D87195B051600B4EC36 /* UserDetailCell1.m */; };
+		F9158D8B195B078500B4EC36 /* UserDetailCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = F9158D8A195B078500B4EC36 /* UserDetailCell2.m */; };
+		F9158D8E195B079900B4EC36 /* UserDetailCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = F9158D8D195B079900B4EC36 /* UserDetailCell3.m */; };
+		F9158D96195B0A2600B4EC36 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F9158D95195B0A2600B4EC36 /* User.m */; };
+		F96856DA195AB22E00EC44B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856D9195AB22E00EC44B4 /* Foundation.framework */; };
+		F96856DC195AB22E00EC44B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */; };
+		F96856DE195AB22E00EC44B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DD195AB22E00EC44B4 /* UIKit.framework */; };
+		F96856E4195AB22E00EC44B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F96856E2195AB22E00EC44B4 /* InfoPlist.strings */; };
+		F96856E6195AB22E00EC44B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F96856E5195AB22E00EC44B4 /* main.m */; };
+		F96856EA195AB22E00EC44B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F96856E9195AB22E00EC44B4 /* AppDelegate.m */; };
+		F96856EC195AB22E00EC44B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96856EB195AB22E00EC44B4 /* Images.xcassets */; };
+		F96856F3195AB22F00EC44B4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856F2195AB22F00EC44B4 /* XCTest.framework */; };
+		F96856F4195AB22F00EC44B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856D9195AB22E00EC44B4 /* Foundation.framework */; };
+		F96856F5195AB22F00EC44B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DD195AB22E00EC44B4 /* UIKit.framework */; };
+		F96856FD195AB22F00EC44B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F96856FB195AB22F00EC44B4 /* InfoPlist.strings */; };
+		F96856FF195AB22F00EC44B4 /* FelixAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F96856FE195AB22F00EC44B4 /* FelixAPITests.m */; };
+		F968570D195ABDC200EC44B4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F968570C195ABDC200EC44B4 /* MainViewController.m */; };
+		F968570F195ABE7F00EC44B4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F968570E195ABE7F00EC44B4 /* MainStoryboard.storyboard */; };
+		F9685716195AC59D00EC44B4 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9685715195AC59D00EC44B4 /* APIController.m */; };
+		F9685719195ADFB600EC44B4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9685718195ADFB600EC44B4 /* Default-568h@2x.png */; };
+		F968571B195AE0A700EC44B4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F968571A195AE0A700EC44B4 /* Default@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F96856F6195AB22F00EC44B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F96856CE195AB22E00EC44B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F96856D5195AB22E00EC44B4;
+			remoteInfo = FelixAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F9158D73195AFD1600B4EC36 /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailViewController.h; path = ViewControllers/UserDetailViewController.h; sourceTree = "<group>"; };
+		F9158D74195AFD1600B4EC36 /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailViewController.m; path = ViewControllers/UserDetailViewController.m; sourceTree = "<group>"; };
+		F9158D75195AFD1600B4EC36 /* UserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserDetailViewController.xib; path = ViewControllers/UserDetailViewController.xib; sourceTree = "<group>"; };
+		F9158D7D195B048900B4EC36 /* SubTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubTableViewCell.h; path = SubClasses/SubTableViewCell.h; sourceTree = "<group>"; };
+		F9158D7E195B048900B4EC36 /* SubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubTableViewCell.m; path = SubClasses/SubTableViewCell.m; sourceTree = "<group>"; };
+		F9158D80195B049A00B4EC36 /* femalePic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = femalePic.png; path = FelixAPI/Resources/femalePic.png; sourceTree = "<group>"; };
+		F9158D81195B049A00B4EC36 /* lineDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineDot.png; path = FelixAPI/Resources/lineDot.png; sourceTree = "<group>"; };
+		F9158D82195B049A00B4EC36 /* malePic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = malePic.png; path = FelixAPI/Resources/malePic.png; sourceTree = "<group>"; };
+		F9158D86195B051600B4EC36 /* UserDetailCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailCell1.h; path = SubClasses/UserDetailCell1.h; sourceTree = "<group>"; };
+		F9158D87195B051600B4EC36 /* UserDetailCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailCell1.m; path = SubClasses/UserDetailCell1.m; sourceTree = "<group>"; };
+		F9158D89195B078500B4EC36 /* UserDetailCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailCell2.h; path = SubClasses/UserDetailCell2.h; sourceTree = "<group>"; };
+		F9158D8A195B078500B4EC36 /* UserDetailCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailCell2.m; path = SubClasses/UserDetailCell2.m; sourceTree = "<group>"; };
+		F9158D8C195B079900B4EC36 /* UserDetailCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailCell3.h; path = SubClasses/UserDetailCell3.h; sourceTree = "<group>"; };
+		F9158D8D195B079900B4EC36 /* UserDetailCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailCell3.m; path = SubClasses/UserDetailCell3.m; sourceTree = "<group>"; };
+		F9158D94195B0A2600B4EC36 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = SubClasses/User.h; sourceTree = "<group>"; };
+		F9158D95195B0A2600B4EC36 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = SubClasses/User.m; sourceTree = "<group>"; };
+		F96856D6195AB22E00EC44B4 /* FelixAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FelixAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F96856D9195AB22E00EC44B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F96856DD195AB22E00EC44B4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F96856E1195AB22E00EC44B4 /* FelixAPI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FelixAPI-Info.plist"; sourceTree = "<group>"; };
+		F96856E3195AB22E00EC44B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F96856E5195AB22E00EC44B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F96856E7195AB22E00EC44B4 /* FelixAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FelixAPI-Prefix.pch"; sourceTree = "<group>"; };
+		F96856E8195AB22E00EC44B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F96856E9195AB22E00EC44B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F96856EB195AB22E00EC44B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FelixAPI/Images.xcassets; sourceTree = "<group>"; };
+		F96856F1195AB22F00EC44B4 /* FelixAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FelixAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F96856F2195AB22F00EC44B4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F96856FA195AB22F00EC44B4 /* FelixAPITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FelixAPITests-Info.plist"; sourceTree = "<group>"; };
+		F96856FC195AB22F00EC44B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F96856FE195AB22F00EC44B4 /* FelixAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FelixAPITests.m; sourceTree = "<group>"; };
+		F968570B195ABDC200EC44B4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewControllers/MainViewController.h; sourceTree = "<group>"; };
+		F968570C195ABDC200EC44B4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewControllers/MainViewController.m; sourceTree = "<group>"; };
+		F968570E195ABE7F00EC44B4 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F9685714195AC59D00EC44B4 /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIController.h; path = ViewControllers/APIController.h; sourceTree = "<group>"; };
+		F9685715195AC59D00EC44B4 /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIController.m; path = ViewControllers/APIController.m; sourceTree = "<group>"; };
+		F9685718195ADFB600EC44B4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "FelixAPI/Images.xcassets/LaunchImage.launchimage/Default-568h@2x.png"; sourceTree = "<group>"; };
+		F968571A195AE0A700EC44B4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "FelixAPI/Images.xcassets/LaunchImage.launchimage/Default@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F96856D3195AB22E00EC44B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96856DC195AB22E00EC44B4 /* CoreGraphics.framework in Frameworks */,
+				F96856DE195AB22E00EC44B4 /* UIKit.framework in Frameworks */,
+				F96856DA195AB22E00EC44B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F96856EE195AB22F00EC44B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96856F3195AB22F00EC44B4 /* XCTest.framework in Frameworks */,
+				F96856F5195AB22F00EC44B4 /* UIKit.framework in Frameworks */,
+				F96856F4195AB22F00EC44B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F96856CD195AB22E00EC44B4 = {
+			isa = PBXGroup;
+			children = (
+				F96856DF195AB22E00EC44B4 /* FelixAPI */,
+				F9685717195ADF8600EC44B4 /* Resources */,
+				F96856F8195AB22F00EC44B4 /* FelixAPITests */,
+				F96856D8195AB22E00EC44B4 /* Frameworks */,
+				F96856D7195AB22E00EC44B4 /* Products */,
+				F96856E0195AB22E00EC44B4 /* Supporting Files */,
+			);
+			sourceTree = "<group>";
+		};
+		F96856D7195AB22E00EC44B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F96856D6195AB22E00EC44B4 /* FelixAPI.app */,
+				F96856F1195AB22F00EC44B4 /* FelixAPITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F96856D8195AB22E00EC44B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F96856D9195AB22E00EC44B4 /* Foundation.framework */,
+				F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */,
+				F96856DD195AB22E00EC44B4 /* UIKit.framework */,
+				F96856F2195AB22F00EC44B4 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F96856DF195AB22E00EC44B4 /* FelixAPI */ = {
+			isa = PBXGroup;
+			children = (
+				F968570E195ABE7F00EC44B4 /* MainStoryboard.storyboard */,
+				F96856E8195AB22E00EC44B4 /* AppDelegate.h */,
+				F96856E9195AB22E00EC44B4 /* AppDelegate.m */,
+				F968570A195ABD9800EC44B4 /* ViewControllers */,
+				F9685710195AC45B00EC44B4 /* SubCells */,
+			);
+			path = FelixAPI;
+			sourceTree = "<group>";
+		};
+		F96856E0195AB22E00EC44B4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F96856E1195AB22E00EC44B4 /* FelixAPI-Info.plist */,
+				F96856E2195AB22E00EC44B4 /* InfoPlist.strings */,
+				F96856E5195AB22E00EC44B4 /* main.m */,
+				F96856E7195AB22E00EC44B4 /* FelixAPI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = FelixAPI;
+			sourceTree = "<group>";
+		};
+		F96856F8195AB22F00EC44B4 /* FelixAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				F96856FE195AB22F00EC44B4 /* FelixAPITests.m */,
+				F96856F9195AB22F00EC44B4 /* Supporting Files */,
+			);
+			path = FelixAPITests;
+			sourceTree = "<group>";
+		};
+		F96856F9195AB22F00EC44B4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F96856FA195AB22F00EC44B4 /* FelixAPITests-Info.plist */,
+				F96856FB195AB22F00EC44B4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F968570A195ABD9800EC44B4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F968570B195ABDC200EC44B4 /* MainViewController.h */,
+				F968570C195ABDC200EC44B4 /* MainViewController.m */,
+				F9158D73195AFD1600B4EC36 /* UserDetailViewController.h */,
+				F9158D74195AFD1600B4EC36 /* UserDetailViewController.m */,
+				F9158D75195AFD1600B4EC36 /* UserDetailViewController.xib */,
+				F9685714195AC59D00EC44B4 /* APIController.h */,
+				F9685715195AC59D00EC44B4 /* APIController.m */,
+				F9158D94195B0A2600B4EC36 /* User.h */,
+				F9158D95195B0A2600B4EC36 /* User.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F9685710195AC45B00EC44B4 /* SubCells */ = {
+			isa = PBXGroup;
+			children = (
+				F9158D7D195B048900B4EC36 /* SubTableViewCell.h */,
+				F9158D7E195B048900B4EC36 /* SubTableViewCell.m */,
+				F9158D86195B051600B4EC36 /* UserDetailCell1.h */,
+				F9158D87195B051600B4EC36 /* UserDetailCell1.m */,
+				F9158D89195B078500B4EC36 /* UserDetailCell2.h */,
+				F9158D8A195B078500B4EC36 /* UserDetailCell2.m */,
+				F9158D8C195B079900B4EC36 /* UserDetailCell3.h */,
+				F9158D8D195B079900B4EC36 /* UserDetailCell3.m */,
+			);
+			name = SubCells;
+			sourceTree = "<group>";
+		};
+		F9685717195ADF8600EC44B4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F96856EB195AB22E00EC44B4 /* Images.xcassets */,
+				F9158D80195B049A00B4EC36 /* femalePic.png */,
+				F9158D81195B049A00B4EC36 /* lineDot.png */,
+				F9158D82195B049A00B4EC36 /* malePic.png */,
+				F968571A195AE0A700EC44B4 /* Default@2x.png */,
+				F9685718195ADFB600EC44B4 /* Default-568h@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F96856D5195AB22E00EC44B4 /* FelixAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9685702195AB22F00EC44B4 /* Build configuration list for PBXNativeTarget "FelixAPI" */;
+			buildPhases = (
+				F96856D2195AB22E00EC44B4 /* Sources */,
+				F96856D3195AB22E00EC44B4 /* Frameworks */,
+				F96856D4195AB22E00EC44B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FelixAPI;
+			productName = FelixAPI;
+			productReference = F96856D6195AB22E00EC44B4 /* FelixAPI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F96856F0195AB22F00EC44B4 /* FelixAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9685705195AB22F00EC44B4 /* Build configuration list for PBXNativeTarget "FelixAPITests" */;
+			buildPhases = (
+				F96856ED195AB22F00EC44B4 /* Sources */,
+				F96856EE195AB22F00EC44B4 /* Frameworks */,
+				F96856EF195AB22F00EC44B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F96856F7195AB22F00EC44B4 /* PBXTargetDependency */,
+			);
+			name = FelixAPITests;
+			productName = FelixAPITests;
+			productReference = F96856F1195AB22F00EC44B4 /* FelixAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F96856CE195AB22E00EC44B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Yun Yun Kat";
+				TargetAttributes = {
+					F96856F0195AB22F00EC44B4 = {
+						TestTargetID = F96856D5195AB22E00EC44B4;
+					};
+				};
+			};
+			buildConfigurationList = F96856D1195AB22E00EC44B4 /* Build configuration list for PBXProject "FelixAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F96856CD195AB22E00EC44B4;
+			productRefGroup = F96856D7195AB22E00EC44B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F96856D5195AB22E00EC44B4 /* FelixAPI */,
+				F96856F0195AB22F00EC44B4 /* FelixAPITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F96856D4195AB22E00EC44B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F968570F195ABE7F00EC44B4 /* MainStoryboard.storyboard in Resources */,
+				F9158D85195B049A00B4EC36 /* malePic.png in Resources */,
+				F9685719195ADFB600EC44B4 /* Default-568h@2x.png in Resources */,
+				F968571B195AE0A700EC44B4 /* Default@2x.png in Resources */,
+				F96856E4195AB22E00EC44B4 /* InfoPlist.strings in Resources */,
+				F9158D77195AFD1600B4EC36 /* UserDetailViewController.xib in Resources */,
+				F9158D84195B049A00B4EC36 /* lineDot.png in Resources */,
+				F9158D83195B049A00B4EC36 /* femalePic.png in Resources */,
+				F96856EC195AB22E00EC44B4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F96856EF195AB22F00EC44B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96856FD195AB22F00EC44B4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F96856D2195AB22E00EC44B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9158D96195B0A2600B4EC36 /* User.m in Sources */,
+				F9158D8B195B078500B4EC36 /* UserDetailCell2.m in Sources */,
+				F9158D7F195B048900B4EC36 /* SubTableViewCell.m in Sources */,
+				F9158D88195B051600B4EC36 /* UserDetailCell1.m in Sources */,
+				F9158D8E195B079900B4EC36 /* UserDetailCell3.m in Sources */,
+				F96856EA195AB22E00EC44B4 /* AppDelegate.m in Sources */,
+				F9685716195AC59D00EC44B4 /* APIController.m in Sources */,
+				F968570D195ABDC200EC44B4 /* MainViewController.m in Sources */,
+				F9158D76195AFD1600B4EC36 /* UserDetailViewController.m in Sources */,
+				F96856E6195AB22E00EC44B4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F96856ED195AB22F00EC44B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96856FF195AB22F00EC44B4 /* FelixAPITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F96856F7195AB22F00EC44B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F96856D5195AB22E00EC44B4 /* FelixAPI */;
+			targetProxy = F96856F6195AB22F00EC44B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F96856E2195AB22E00EC44B4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F96856E3195AB22E00EC44B4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F96856FB195AB22F00EC44B4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F96856FC195AB22F00EC44B4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9685700195AB22F00EC44B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F9685701195AB22F00EC44B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9685703195AB22F00EC44B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FelixAPI/FelixAPI-Prefix.pch";
+				INFOPLIST_FILE = "FelixAPI/FelixAPI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F9685704195AB22F00EC44B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FelixAPI/FelixAPI-Prefix.pch";
+				INFOPLIST_FILE = "FelixAPI/FelixAPI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F9685706195AB22F00EC44B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FelixAPI.app/FelixAPI";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FelixAPI/FelixAPI-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FelixAPITests/FelixAPITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F9685707195AB22F00EC44B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FelixAPI.app/FelixAPI";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FelixAPI/FelixAPI-Prefix.pch";
+				INFOPLIST_FILE = "FelixAPITests/FelixAPITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F96856D1195AB22E00EC44B4 /* Build configuration list for PBXProject "FelixAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9685700195AB22F00EC44B4 /* Debug */,
+				F9685701195AB22F00EC44B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9685702195AB22F00EC44B4 /* Build configuration list for PBXNativeTarget "FelixAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9685703195AB22F00EC44B4 /* Debug */,
+				F9685704195AB22F00EC44B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9685705195AB22F00EC44B4 /* Build configuration list for PBXNativeTarget "FelixAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9685706195AB22F00EC44B4 /* Debug */,
+				F9685707195AB22F00EC44B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F96856CE195AB22E00EC44B4 /* Project object */;
+}
