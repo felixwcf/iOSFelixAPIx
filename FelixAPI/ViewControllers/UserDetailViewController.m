@@ -66,10 +66,10 @@
 {
     switch ([indexPath row]) {
         case 0:
-            return 140;
+            return 150;
             break;
         case 1:
-            return 300;
+            return 220;
             break;
         case 2:
             return 500;
@@ -108,18 +108,23 @@
     {
         static NSString *cellIdentifier1 = @"p1Cell";
         UserDetailCell2 *cell1 = [tableView dequeueReusableCellWithIdentifier:cellIdentifier1];
-        cell1.selectionStyle = UITableViewCellSelectionStyleNone;
+
         if(cell1 == nil)
         {
             cell1 = [[UserDetailCell2 alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier1];
             [cell1 setBackgroundColor:[UIColor clearColor]];
-            
-            cell1.lblID.text = [NSString stringWithFormat:@"@%@", self.UserId];
-            cell1.txtFldFirstName.placeholder = self.FirstName;
-            cell1.txtFldLastName.text = self.LastName;
-            cell1.txtFldPhoneNum.text = self.Phone;
-            cell1.txtFldEmail.text = self.Email;
         }
+        
+        cell1.lblID.text = [NSString stringWithFormat:@"@%@", self.UserId];
+        cell1.txtFldFirstName.text = [NSString stringWithFormat:@"%@", self.FirstName];
+        cell1.txtFldLastName.text = [NSString stringWithFormat:@"%@", self.LastName];
+        cell1.txtFldPhone.text = [NSString stringWithFormat:@"%@", self.Phone];
+        cell1.txtFldEmail.text = [NSString stringWithFormat:@"%@", self.Email];
+        
+        cell1.txtFldFirstName.delegate = self;
+        cell1.txtFldLastName.delegate = self;
+        cell1.txtFldPhone.delegate = self;
+        cell1.txtFldEmail.delegate = self;
         
         return cell1;
     }
@@ -132,13 +137,21 @@
         {
             cell2 = [[UserDetailCell3 alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier2];
             [cell2 setBackgroundColor:[UIColor clearColor]];
-            
-            
         }
         
         return cell2;
     }
     
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
+
+
 
 @end

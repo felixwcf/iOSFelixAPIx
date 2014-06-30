@@ -14,9 +14,11 @@
 		F9158D84195B049A00B4EC36 /* lineDot.png in Resources */ = {isa = PBXBuildFile; fileRef = F9158D81195B049A00B4EC36 /* lineDot.png */; };
 		F9158D85195B049A00B4EC36 /* malePic.png in Resources */ = {isa = PBXBuildFile; fileRef = F9158D82195B049A00B4EC36 /* malePic.png */; };
 		F9158D88195B051600B4EC36 /* UserDetailCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = F9158D87195B051600B4EC36 /* UserDetailCell1.m */; };
-		F9158D8B195B078500B4EC36 /* UserDetailCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = F9158D8A195B078500B4EC36 /* UserDetailCell2.m */; };
 		F9158D8E195B079900B4EC36 /* UserDetailCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = F9158D8D195B079900B4EC36 /* UserDetailCell3.m */; };
 		F9158D96195B0A2600B4EC36 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F9158D95195B0A2600B4EC36 /* User.m */; };
+		F91A16E61961932A0080AC65 /* UserDetailCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = F91A16E51961932A0080AC65 /* UserDetailCell2.m */; };
+		F91A16E91961A00E0080AC65 /* icon_email.png in Resources */ = {isa = PBXBuildFile; fileRef = F91A16E71961A00E0080AC65 /* icon_email.png */; };
+		F91A16EA1961A00E0080AC65 /* icon_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = F91A16E81961A00E0080AC65 /* icon_phone.png */; };
 		F96856DA195AB22E00EC44B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856D9195AB22E00EC44B4 /* Foundation.framework */; };
 		F96856DC195AB22E00EC44B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */; };
 		F96856DE195AB22E00EC44B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DD195AB22E00EC44B4 /* UIKit.framework */; };
@@ -57,12 +59,14 @@
 		F9158D82195B049A00B4EC36 /* malePic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = malePic.png; path = FelixAPI/Resources/malePic.png; sourceTree = "<group>"; };
 		F9158D86195B051600B4EC36 /* UserDetailCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailCell1.h; path = SubClasses/UserDetailCell1.h; sourceTree = "<group>"; };
 		F9158D87195B051600B4EC36 /* UserDetailCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailCell1.m; path = SubClasses/UserDetailCell1.m; sourceTree = "<group>"; };
-		F9158D89195B078500B4EC36 /* UserDetailCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailCell2.h; path = SubClasses/UserDetailCell2.h; sourceTree = "<group>"; };
-		F9158D8A195B078500B4EC36 /* UserDetailCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailCell2.m; path = SubClasses/UserDetailCell2.m; sourceTree = "<group>"; };
 		F9158D8C195B079900B4EC36 /* UserDetailCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailCell3.h; path = SubClasses/UserDetailCell3.h; sourceTree = "<group>"; };
 		F9158D8D195B079900B4EC36 /* UserDetailCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailCell3.m; path = SubClasses/UserDetailCell3.m; sourceTree = "<group>"; };
 		F9158D94195B0A2600B4EC36 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = SubClasses/User.h; sourceTree = "<group>"; };
 		F9158D95195B0A2600B4EC36 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = SubClasses/User.m; sourceTree = "<group>"; };
+		F91A16E41961932A0080AC65 /* UserDetailCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailCell2.h; path = SubClasses/UserDetailCell2.h; sourceTree = "<group>"; };
+		F91A16E51961932A0080AC65 /* UserDetailCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailCell2.m; path = SubClasses/UserDetailCell2.m; sourceTree = "<group>"; };
+		F91A16E71961A00E0080AC65 /* icon_email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_email.png; path = ../FelixAPI/FelixAPI/Resources/icon_email.png; sourceTree = "<group>"; };
+		F91A16E81961A00E0080AC65 /* icon_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_phone.png; path = ../FelixAPI/FelixAPI/Resources/icon_phone.png; sourceTree = "<group>"; };
 		F96856D6195AB22E00EC44B4 /* FelixAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FelixAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96856D9195AB22E00EC44B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -209,10 +213,10 @@
 				F9158D7E195B048900B4EC36 /* SubTableViewCell.m */,
 				F9158D86195B051600B4EC36 /* UserDetailCell1.h */,
 				F9158D87195B051600B4EC36 /* UserDetailCell1.m */,
-				F9158D89195B078500B4EC36 /* UserDetailCell2.h */,
-				F9158D8A195B078500B4EC36 /* UserDetailCell2.m */,
 				F9158D8C195B079900B4EC36 /* UserDetailCell3.h */,
 				F9158D8D195B079900B4EC36 /* UserDetailCell3.m */,
+				F91A16E41961932A0080AC65 /* UserDetailCell2.h */,
+				F91A16E51961932A0080AC65 /* UserDetailCell2.m */,
 			);
 			name = SubCells;
 			sourceTree = "<group>";
@@ -220,6 +224,8 @@
 		F9685717195ADF8600EC44B4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F91A16E71961A00E0080AC65 /* icon_email.png */,
+				F91A16E81961A00E0080AC65 /* icon_phone.png */,
 				F96856EB195AB22E00EC44B4 /* Images.xcassets */,
 				F9158D80195B049A00B4EC36 /* femalePic.png */,
 				F9158D81195B049A00B4EC36 /* lineDot.png */,
@@ -308,8 +314,10 @@
 				F968570F195ABE7F00EC44B4 /* MainStoryboard.storyboard in Resources */,
 				F9158D85195B049A00B4EC36 /* malePic.png in Resources */,
 				F9685719195ADFB600EC44B4 /* Default-568h@2x.png in Resources */,
+				F91A16E91961A00E0080AC65 /* icon_email.png in Resources */,
 				F968571B195AE0A700EC44B4 /* Default@2x.png in Resources */,
 				F96856E4195AB22E00EC44B4 /* InfoPlist.strings in Resources */,
+				F91A16EA1961A00E0080AC65 /* icon_phone.png in Resources */,
 				F9158D77195AFD1600B4EC36 /* UserDetailViewController.xib in Resources */,
 				F9158D84195B049A00B4EC36 /* lineDot.png in Resources */,
 				F9158D83195B049A00B4EC36 /* femalePic.png in Resources */,
@@ -333,7 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9158D96195B0A2600B4EC36 /* User.m in Sources */,
-				F9158D8B195B078500B4EC36 /* UserDetailCell2.m in Sources */,
 				F9158D7F195B048900B4EC36 /* SubTableViewCell.m in Sources */,
 				F9158D88195B051600B4EC36 /* UserDetailCell1.m in Sources */,
 				F9158D8E195B079900B4EC36 /* UserDetailCell3.m in Sources */,
@@ -341,6 +348,7 @@
 				F9685716195AC59D00EC44B4 /* APIController.m in Sources */,
 				F968570D195ABDC200EC44B4 /* MainViewController.m in Sources */,
 				F9158D76195AFD1600B4EC36 /* UserDetailViewController.m in Sources */,
+				F91A16E61961932A0080AC65 /* UserDetailCell2.m in Sources */,
 				F96856E6195AB22E00EC44B4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

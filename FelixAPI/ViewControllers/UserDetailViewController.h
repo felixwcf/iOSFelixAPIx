@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UserDetailViewController : UIViewController
-<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UITextFieldDelegate>
 {
     IBOutlet UITableView *dataTableView;
     
