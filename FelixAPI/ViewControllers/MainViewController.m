@@ -35,7 +35,22 @@
     APIController *apiController = [[APIController alloc] init];
     [apiController getUserAPICall];
     apiController.delegate = self;
+    
     // Do any additional setup after loading the view.
+    
+    CGRect frameimg = CGRectMake(0, 0, 19, 19);
+    UIButton *addButton = [[UIButton alloc] initWithFrame:frameimg];
+    [addButton setBackgroundImage:[UIImage imageNamed:@"addButton.png"] forState:UIControlStateNormal];
+    [addButton addTarget:self action:@selector(addUser) forControlEvents:UIControlEventTouchUpInside];
+    [addButton setShowsTouchWhenHighlighted:YES];
+    
+    UIBarButtonItem *btnItem =[[UIBarButtonItem alloc] initWithCustomView:addButton];
+    self.navigationItem.rightBarButtonItem=btnItem;
+}
+
+- (void) addUser
+{
+    NSLog(@"Add User...");
 }
 
 - (void)didReceiveMemoryWarning
@@ -122,6 +137,8 @@
     
     [self.navigationController pushViewController:usrDetailViewController animated:YES];
 }
+
+
 
 #pragma mark - Custom Delegates
 /* -------------------------------------------------

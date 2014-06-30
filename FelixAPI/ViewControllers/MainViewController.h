@@ -15,6 +15,8 @@
     IBOutlet UITableView *dataTableView;
     IBOutlet UILabel *lblNoData;
     NSMutableArray *dataArray;
+    
+    IBOutlet UINavigationBar *navBar;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *dataTableView;

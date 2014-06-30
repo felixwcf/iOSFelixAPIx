@@ -24,6 +24,7 @@
 		F91A16F41961B2670080AC65 /* icon_postcode.png in Resources */ = {isa = PBXBuildFile; fileRef = F91A16F31961B2670080AC65 /* icon_postcode.png */; };
 		F91A16F81961B2C40080AC65 /* UICustomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F91A16F71961B2C40080AC65 /* UICustomTextView.m */; };
 		F91A16FA1961BA7C0080AC65 /* icon_city.png in Resources */ = {isa = PBXBuildFile; fileRef = F91A16F91961BA7C0080AC65 /* icon_city.png */; };
+		F91A16FC1961BF3B0080AC65 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F91A16FB1961BF3B0080AC65 /* addButton.png */; };
 		F96856DA195AB22E00EC44B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856D9195AB22E00EC44B4 /* Foundation.framework */; };
 		F96856DC195AB22E00EC44B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */; };
 		F96856DE195AB22E00EC44B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DD195AB22E00EC44B4 /* UIKit.framework */; };
@@ -78,6 +79,7 @@
 		F91A16F61961B2C40080AC65 /* UICustomTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UICustomTextView.h; path = SubClasses/UICustomTextView.h; sourceTree = "<group>"; };
 		F91A16F71961B2C40080AC65 /* UICustomTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UICustomTextView.m; path = SubClasses/UICustomTextView.m; sourceTree = "<group>"; };
 		F91A16F91961BA7C0080AC65 /* icon_city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_city.png; path = FelixAPI/Resources/icon_city.png; sourceTree = "<group>"; };
+		F91A16FB1961BF3B0080AC65 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addButton.png; path = FelixAPI/Resources/addButton.png; sourceTree = "<group>"; };
 		F96856D6195AB22E00EC44B4 /* FelixAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FelixAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96856D9195AB22E00EC44B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -246,6 +248,7 @@
 		F9685717195ADF8600EC44B4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F91A16FB1961BF3B0080AC65 /* addButton.png */,
 				F91A16F91961BA7C0080AC65 /* icon_city.png */,
 				F91A16F31961B2670080AC65 /* icon_postcode.png */,
 				F91A16EB1961ACFF0080AC65 /* icon_address.png */,
@@ -341,6 +344,7 @@
 				F968570F195ABE7F00EC44B4 /* MainStoryboard.storyboard in Resources */,
 				F91A16EF1961ACFF0080AC65 /* icon_address.png in Resources */,
 				F9158D85195B049A00B4EC36 /* malePic.png in Resources */,
+				F91A16FC1961BF3B0080AC65 /* addButton.png in Resources */,
 				F9685719195ADFB600EC44B4 /* Default-568h@2x.png in Resources */,
 				F968571B195AE0A700EC44B4 /* Default@2x.png in Resources */,
 				F91A16F21961ACFF0080AC65 /* icon_phone.png in Resources */,
