@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Yun Yun Kat. All rights reserved.
 //
 
+// UserDetail Second Row - Basic Info
+
 #import <UIKit/UIKit.h>
 
 @interface UserDetailCell2 : UITableViewCell

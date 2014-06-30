@@ -41,14 +41,14 @@
         txtFldLastName.returnKeyType = UIReturnKeyDone;
         [txtFldLastName setBackgroundColor:[UIColor clearColor]];
         
-        txtFldPhone = [[UITextField alloc] initWithFrame:CGRectMake(60, 125, 240, 32)];
+        txtFldPhone = [[UITextField alloc] initWithFrame:CGRectMake(60, 123, 240, 32)];
         txtFldPhone.textAlignment = NSTextAlignmentLeft;
         txtFldPhone.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
         txtFldPhone.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         txtFldPhone.returnKeyType = UIReturnKeyDone;
         [txtFldPhone setBackgroundColor:[UIColor clearColor]];
         
-        txtFldEmail = [[UITextField alloc] initWithFrame:CGRectMake(60, 165, 300, 32)];
+        txtFldEmail = [[UITextField alloc] initWithFrame:CGRectMake(60, 163, 300, 32)];
         txtFldEmail.textAlignment = NSTextAlignmentLeft;
         txtFldEmail.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
         txtFldEmail.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];

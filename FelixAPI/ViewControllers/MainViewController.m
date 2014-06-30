@@ -114,9 +114,10 @@
     usrDetailViewController.Gender = [rowData objectForKey:@"GENDER"];
     usrDetailViewController.Phone = [rowData objectForKey:@"PHONE"];
     usrDetailViewController.Email = [rowData objectForKey:@"EMAIL"];
+    usrDetailViewController.Address = [rowData objectForKey:@"ADDRESS"];
     usrDetailViewController.City = [rowData objectForKey:@"CITY"];
-    usrDetailViewController.State = [rowData objectForKey:@"STATE"];
     usrDetailViewController.Postcode = [rowData objectForKey:@"ZIPCODE"];
+    usrDetailViewController.DOB = [rowData objectForKey:@"DOB"];
     usrDetailViewController.ProfilePic = ucell.imgVwPic;
     
     [self.navigationController pushViewController:usrDetailViewController animated:YES];

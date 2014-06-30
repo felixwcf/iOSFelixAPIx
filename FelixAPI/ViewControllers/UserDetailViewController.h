@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UserDetailViewController : UIViewController
-<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UITextFieldDelegate>
+<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 {
     IBOutlet UITableView *dataTableView;
     
@@ -25,6 +25,8 @@
     NSString *DOB;
     NSString *Address;
     UIImageView *ProfilePic;
+    
+    UITextView *_txtVwAddress;
     
 }
 
