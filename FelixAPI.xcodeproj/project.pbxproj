@@ -25,6 +25,13 @@
 		F91A16F81961B2C40080AC65 /* UICustomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F91A16F71961B2C40080AC65 /* UICustomTextView.m */; };
 		F91A16FA1961BA7C0080AC65 /* icon_city.png in Resources */ = {isa = PBXBuildFile; fileRef = F91A16F91961BA7C0080AC65 /* icon_city.png */; };
 		F91A16FC1961BF3B0080AC65 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F91A16FB1961BF3B0080AC65 /* addButton.png */; };
+		F92E299D1962D804001C9372 /* AddUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92E299B1962D804001C9372 /* AddUserViewController.m */; };
+		F92E299E1962D804001C9372 /* AddUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F92E299C1962D804001C9372 /* AddUserViewController.xib */; };
+		F92E29A21962E234001C9372 /* icon_addUser.png in Resources */ = {isa = PBXBuildFile; fileRef = F92E299F1962E234001C9372 /* icon_addUser.png */; };
+		F92E29A31962E234001C9372 /* icon_userAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = F92E29A01962E234001C9372 /* icon_userAvailable.png */; };
+		F92E29A41962E234001C9372 /* icon_userNotAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = F92E29A11962E234001C9372 /* icon_userNotAvailable.png */; };
+		F92E29A71962E2A3001C9372 /* AddUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92E29A61962E2A3001C9372 /* AddUserTableViewCell.m */; };
+		F92E29AA1962FF1E001C9372 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F92E29A91962FF1E001C9372 /* Reachability.m */; };
 		F96856DA195AB22E00EC44B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856D9195AB22E00EC44B4 /* Foundation.framework */; };
 		F96856DC195AB22E00EC44B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */; };
 		F96856DE195AB22E00EC44B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DD195AB22E00EC44B4 /* UIKit.framework */; };
@@ -80,6 +87,16 @@
 		F91A16F71961B2C40080AC65 /* UICustomTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UICustomTextView.m; path = SubClasses/UICustomTextView.m; sourceTree = "<group>"; };
 		F91A16F91961BA7C0080AC65 /* icon_city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_city.png; path = FelixAPI/Resources/icon_city.png; sourceTree = "<group>"; };
 		F91A16FB1961BF3B0080AC65 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addButton.png; path = FelixAPI/Resources/addButton.png; sourceTree = "<group>"; };
+		F92E299A1962D804001C9372 /* AddUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddUserViewController.h; path = ViewControllers/AddUserViewController.h; sourceTree = "<group>"; };
+		F92E299B1962D804001C9372 /* AddUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddUserViewController.m; path = ViewControllers/AddUserViewController.m; sourceTree = "<group>"; };
+		F92E299C1962D804001C9372 /* AddUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddUserViewController.xib; path = ViewControllers/AddUserViewController.xib; sourceTree = "<group>"; };
+		F92E299F1962E234001C9372 /* icon_addUser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_addUser.png; path = FelixAPI/Resources/icon_addUser.png; sourceTree = "<group>"; };
+		F92E29A01962E234001C9372 /* icon_userAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_userAvailable.png; path = FelixAPI/Resources/icon_userAvailable.png; sourceTree = "<group>"; };
+		F92E29A11962E234001C9372 /* icon_userNotAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_userNotAvailable.png; path = FelixAPI/Resources/icon_userNotAvailable.png; sourceTree = "<group>"; };
+		F92E29A51962E2A3001C9372 /* AddUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddUserTableViewCell.h; path = SubClasses/AddUserTableViewCell.h; sourceTree = "<group>"; };
+		F92E29A61962E2A3001C9372 /* AddUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddUserTableViewCell.m; path = SubClasses/AddUserTableViewCell.m; sourceTree = "<group>"; };
+		F92E29A81962FF1E001C9372 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F92E29A91962FF1E001C9372 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		F96856D6195AB22E00EC44B4 /* FelixAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FelixAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96856D9195AB22E00EC44B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -217,11 +234,16 @@
 		F968570A195ABD9800EC44B4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F92E29A81962FF1E001C9372 /* Reachability.h */,
+				F92E29A91962FF1E001C9372 /* Reachability.m */,
 				F968570B195ABDC200EC44B4 /* MainViewController.h */,
 				F968570C195ABDC200EC44B4 /* MainViewController.m */,
 				F9158D73195AFD1600B4EC36 /* UserDetailViewController.h */,
 				F9158D74195AFD1600B4EC36 /* UserDetailViewController.m */,
 				F9158D75195AFD1600B4EC36 /* UserDetailViewController.xib */,
+				F92E299A1962D804001C9372 /* AddUserViewController.h */,
+				F92E299B1962D804001C9372 /* AddUserViewController.m */,
+				F92E299C1962D804001C9372 /* AddUserViewController.xib */,
 				F9685714195AC59D00EC44B4 /* APIController.h */,
 				F9685715195AC59D00EC44B4 /* APIController.m */,
 				F9158D94195B0A2600B4EC36 /* User.h */,
@@ -241,6 +263,8 @@
 				F91A16E51961932A0080AC65 /* UserDetailCell2.m */,
 				F9158D8C195B079900B4EC36 /* UserDetailCell3.h */,
 				F9158D8D195B079900B4EC36 /* UserDetailCell3.m */,
+				F92E29A51962E2A3001C9372 /* AddUserTableViewCell.h */,
+				F92E29A61962E2A3001C9372 /* AddUserTableViewCell.m */,
 			);
 			name = SubCells;
 			sourceTree = "<group>";
@@ -248,6 +272,9 @@
 		F9685717195ADF8600EC44B4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F92E299F1962E234001C9372 /* icon_addUser.png */,
+				F92E29A01962E234001C9372 /* icon_userAvailable.png */,
+				F92E29A11962E234001C9372 /* icon_userNotAvailable.png */,
 				F91A16FB1961BF3B0080AC65 /* addButton.png */,
 				F91A16F91961BA7C0080AC65 /* icon_city.png */,
 				F91A16F31961B2670080AC65 /* icon_postcode.png */,
@@ -340,13 +367,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F91A16F01961ACFF0080AC65 /* icon_dob.png in Resources */,
+				F92E29A41962E234001C9372 /* icon_userNotAvailable.png in Resources */,
 				F91A16F41961B2670080AC65 /* icon_postcode.png in Resources */,
 				F968570F195ABE7F00EC44B4 /* MainStoryboard.storyboard in Resources */,
 				F91A16EF1961ACFF0080AC65 /* icon_address.png in Resources */,
 				F9158D85195B049A00B4EC36 /* malePic.png in Resources */,
 				F91A16FC1961BF3B0080AC65 /* addButton.png in Resources */,
 				F9685719195ADFB600EC44B4 /* Default-568h@2x.png in Resources */,
+				F92E29A21962E234001C9372 /* icon_addUser.png in Resources */,
 				F968571B195AE0A700EC44B4 /* Default@2x.png in Resources */,
+				F92E29A31962E234001C9372 /* icon_userAvailable.png in Resources */,
+				F92E299E1962D804001C9372 /* AddUserViewController.xib in Resources */,
 				F91A16F21961ACFF0080AC65 /* icon_phone.png in Resources */,
 				F96856E4195AB22E00EC44B4 /* InfoPlist.strings in Resources */,
 				F9158D77195AFD1600B4EC36 /* UserDetailViewController.xib in Resources */,
@@ -378,12 +409,15 @@
 				F9158D88195B051600B4EC36 /* UserDetailCell1.m in Sources */,
 				F9158D8E195B079900B4EC36 /* UserDetailCell3.m in Sources */,
 				F96856EA195AB22E00EC44B4 /* AppDelegate.m in Sources */,
+				F92E299D1962D804001C9372 /* AddUserViewController.m in Sources */,
 				F9685716195AC59D00EC44B4 /* APIController.m in Sources */,
 				F91A16F81961B2C40080AC65 /* UICustomTextView.m in Sources */,
 				F968570D195ABDC200EC44B4 /* MainViewController.m in Sources */,
 				F9158D76195AFD1600B4EC36 /* UserDetailViewController.m in Sources */,
+				F92E29AA1962FF1E001C9372 /* Reachability.m in Sources */,
 				F91A16E61961932A0080AC65 /* UserDetailCell2.m in Sources */,
 				F96856E6195AB22E00EC44B4 /* main.m in Sources */,
+				F92E29A71962E2A3001C9372 /* AddUserTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

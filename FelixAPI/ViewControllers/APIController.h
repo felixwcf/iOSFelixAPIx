@@ -10,17 +10,28 @@
 
 @protocol APIControllerDelegate <NSObject>
 -(void) didGetUsersData:(NSMutableArray *)usersArray;
+-(void) didGetUserAvailibility:(BOOL )valid;
 @end
 
 @interface APIController : UIViewController<NSURLConnectionDelegate>
 {
     NSMutableData *responseData;
     id delegate;
+    
+    BOOL isGetUsers;
+    BOOL isCheckUserAvailibility;
+    BOOL isAddNewUser;
 }
 
 - (void) getUserAPICall;
+- (void)checkUserAvailability:(NSString *)userId;
+- (void) addUserWithUserID:(NSString *)userid firstName:(NSString *)fName LastName:(NSString *)lName
+                  phoneNum:(NSString *)phone email:(NSString *)email gender:(NSString *)gender dob:(NSString *)dob address:(NSString *)address city:(NSString *)city
+                  postcode:(NSString *)postcode;
 
 @property (nonatomic, retain) id<APIControllerDelegate> delegate;
 @property (retain, nonatomic) NSMutableData *responseData;
+@property (assign, nonatomic) BOOL isGetUsers;
+@property (assign, nonatomic) BOOL isCheckUserAvailibility;
 
 @end

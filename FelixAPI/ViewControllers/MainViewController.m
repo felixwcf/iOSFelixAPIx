@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "SubTableViewCell.h"
 #import "UserDetailViewController.h"
+#import "AddUserViewController.h"
 
 @interface MainViewController ()
 
@@ -41,16 +42,18 @@
     CGRect frameimg = CGRectMake(0, 0, 19, 19);
     UIButton *addButton = [[UIButton alloc] initWithFrame:frameimg];
     [addButton setBackgroundImage:[UIImage imageNamed:@"addButton.png"] forState:UIControlStateNormal];
-    [addButton addTarget:self action:@selector(addUser) forControlEvents:UIControlEventTouchUpInside];
+    [addButton addTarget:self action:@selector(launchAddUSerViewController) forControlEvents:UIControlEventTouchUpInside];
     [addButton setShowsTouchWhenHighlighted:YES];
     
     UIBarButtonItem *btnItem =[[UIBarButtonItem alloc] initWithCustomView:addButton];
     self.navigationItem.rightBarButtonItem=btnItem;
 }
 
-- (void) addUser
+- (void) launchAddUSerViewController
 {
-    NSLog(@"Add User...");
+    AddUserViewController *addUserVwController = [[AddUserViewController alloc] init];
+    [self.navigationController pushViewController:addUserVwController animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -150,6 +153,11 @@
     NSLog(@"Get users data...");
     dataArray = usersArray;
     [dataTableView reloadData];
+}
+
+- (void)didGetUserAvailibility:(BOOL)valid
+{
+    
 }
 
 @end
