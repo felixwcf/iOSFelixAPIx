@@ -33,10 +33,7 @@
 {
     [super viewDidLoad];
     dataArray = [[NSMutableArray alloc] init];
-    APIController *apiController = [[APIController alloc] init];
-    [apiController getUserAPICall];
-    apiController.delegate = self;
-    
+
     // Do any additional setup after loading the view.
     
     CGRect frameimg = CGRectMake(0, 0, 19, 19);
@@ -47,6 +44,13 @@
     
     UIBarButtonItem *btnItem =[[UIBarButtonItem alloc] initWithCustomView:addButton];
     self.navigationItem.rightBarButtonItem=btnItem;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    APIController *apiController = [[APIController alloc] init];
+    apiController.delegate = self;
+    [apiController getUserAPICall];
 }
 
 - (void) launchAddUSerViewController
@@ -156,6 +160,11 @@
 }
 
 - (void)didGetUserAvailibility:(BOOL)valid
+{
+    
+}
+
+- (void)didCreatedNewUser:(BOOL)saved
 {
     
 }

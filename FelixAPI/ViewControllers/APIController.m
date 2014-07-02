@@ -71,6 +71,35 @@
                             postcode:(NSString *)postcode
 {
     
+    isAddNewUser = YES;
+    responseData = [[NSMutableData alloc] init];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:userid, @"USER_ID",
+                                                                    fName, @"FIRST_NAME",
+                                                                    lName, @"LAST_NAME",
+                                                                    phone, @"PHONE",
+                                                                    email, @"EMAIL",
+                                                                    gender, @"GENDER",
+                                                                    dob, @"DOB",
+                                                                    address, @"ADDRESS",
+                                                                    city, @"CITY",
+                                                                    postcode, @"ZIPCODE",
+                                                                    nil];
+    
+
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:0 error:nil];
+//    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+//    NSLog(@"new json::%@",jsonString);
+    
+    
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.103:9000/api/addUser"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
+    [request setHTTPMethod:@"POST"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
+    [request setHTTPBody:data];
+    
+    (void) [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
 }
 
 - (void) deserializeJsonString:(NSString *)json
@@ -86,11 +115,17 @@
     }
     else if(isCheckUserAvailibility)
     {
-        
         if([json isEqualToString:@"OK"])
             [self.delegate didGetUserAvailibility:YES];
         else
             [self.delegate didGetUserAvailibility:NO];
+    }
+    else if(isAddNewUser)
+    {
+        if([json isEqualToString:@"OK"])
+            [self.delegate didCreatedNewUser:YES];
+        else
+            [self.delegate didCreatedNewUser:NO];
     }
 }
 
@@ -112,16 +147,18 @@
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"connection error");
     isGetUsers = NO;
     isCheckUserAvailibility = NO;
+    isAddNewUser = NO;
+    responseData = nil;
 }
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSLog(@"connection success");
     isGetUsers = NO;
     isCheckUserAvailibility = NO;
+    isAddNewUser = NO;
+    responseData = nil;
 }
 
 @end

@@ -49,6 +49,17 @@
 
 - (void) addUserIntoDatabse
 {
+    [txtFldUserID resignFirstResponder];
+    [txtFldFirstName resignFirstResponder];
+    [txtFldLastName resignFirstResponder];
+    [txtFldEmail resignFirstResponder];
+    [txtFldPhone resignFirstResponder];
+    [txtFldGender resignFirstResponder];
+    [txtFldDOB resignFirstResponder];
+    [txtFldAddress resignFirstResponder];
+    [txtFldCity resignFirstResponder];
+    [txtFldPostcode resignFirstResponder];
+    
     if(isUserIdAvailable && ![txtFldUserID.text isEqualToString:@""]
        && ![txtFldFirstName.text isEqualToString:@""]
        && ![txtFldLastName.text isEqualToString:@""])
@@ -194,6 +205,15 @@
     return YES;
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(alertView.tag == 100)
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+
 #pragma mark - Custom Delegates
 /* -------------------------------------------------
  *            Custom Delegates
@@ -211,5 +231,32 @@
     else
         [imgVw_userId_Available setImage:[UIImage imageNamed:@"icon_userNotAvailable.png"]];
 }
+
+-(void) didCreatedNewUser:(BOOL )saved
+{
+    if(saved)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:nil
+                              message:@"New user created"
+                              delegate:self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil, nil];
+        [alert setTag:100];
+        [alert show];
+        
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Create New User Fail"
+                              message:@"Please try again."
+                              delegate:self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
 
 @end

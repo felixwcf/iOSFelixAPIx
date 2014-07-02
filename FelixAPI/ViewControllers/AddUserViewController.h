@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "APIController.h"
 
-@interface AddUserViewController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, APIControllerDelegate>
+@interface AddUserViewController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, APIControllerDelegate, UIAlertViewDelegate>
 {
     
     IBOutlet UITableView *addUserTableView;

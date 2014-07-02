@@ -11,6 +11,7 @@
 @protocol APIControllerDelegate <NSObject>
 -(void) didGetUsersData:(NSMutableArray *)usersArray;
 -(void) didGetUserAvailibility:(BOOL )valid;
+-(void) didCreatedNewUser:(BOOL )saved;
 @end
 
 @interface APIController : UIViewController<NSURLConnectionDelegate>

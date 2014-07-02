@@ -55,6 +55,8 @@
         textField.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:22.0];
         textField.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         textField.returnKeyType = UIReturnKeyDone;
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [textField setBackgroundColor:[UIColor clearColor]];
     }
     return self;
