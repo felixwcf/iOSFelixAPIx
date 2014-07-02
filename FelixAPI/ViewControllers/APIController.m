@@ -14,11 +14,16 @@
 
 @end
 
+NSString * const NORMAL_API = @"http://192.168.0.103:9000/api";
+NSString * const ENTITY_FRAMEWORK_API = @"http://192.168.0.103:51122/api";
+
 @implementation APIController
 @synthesize responseData;
 @synthesize delegate;
 @synthesize isGetUsers;
 @synthesize isCheckUserAvailibility;
+@synthesize isEntityFrameworkAPI;
+@synthesize apiURL;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,11 +34,27 @@
     return self;
 }
 
+- (id)init
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    isEntityFrameworkAPI = [defaults boolForKey:@"isEntityFrameworkAPI"];
+    
+    NSLog(@"isEntityFrameworkAPI:%d",isEntityFrameworkAPI);
+    
+    if(isEntityFrameworkAPI)
+        self.apiURL = ENTITY_FRAMEWORK_API;
+    else
+        self.apiURL = NORMAL_API;
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +69,12 @@
     {
         isGetUsers = YES;
         responseData = [[NSMutableData alloc] init];
-        NSURL *url = [NSURL URLWithString:@"http://192.168.0.103:9000/api/users"];
+        
+        
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/users",self.apiURL]];
+        
+        NSLog(@"url::%@",url);
+        
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
         
         (void) [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
@@ -61,7 +87,7 @@
     {
         isCheckUserAvailibility = YES;
         responseData = [[NSMutableData alloc] init];
-        NSString *urlString = [NSString stringWithFormat:@"http://192.168.0.103:9000/api/checkUser/%@", userId];
+        NSString *urlString = [NSString stringWithFormat:@"%@/checkUser/%@", self.apiURL, userId];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
         
@@ -98,7 +124,7 @@
         NSLog(@"new json::%@",jsonString);
         
         
-        NSURL *url = [NSURL URLWithString:@"http://192.168.0.103:9000/api/addUser"];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/addUser", self.apiURL]];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
         [request setHTTPMethod:@"POST"];
         [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
@@ -135,7 +161,7 @@
            NSLog(@"new json::%@",jsonString);
         NSLog(@"userid::%@",userid);
         
-        NSString *urlString = [NSString stringWithFormat:@"http://192.168.0.103:9000/api/updateUser/%@", userid];
+        NSString *urlString = [NSString stringWithFormat:@"%@/updateUser/%@", self.apiURL, userid];
         NSURL *url = [NSURL URLWithString:urlString];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
         [request setHTTPMethod:@"PUT"];
@@ -154,7 +180,7 @@
     {
         isRemoveUser = YES;
         responseData = [[NSMutableData alloc] init];
-        NSString *urlString = [NSString stringWithFormat:@"http://192.168.0.103:9000/api/deleteUser/%@", userid];
+        NSString *urlString = [NSString stringWithFormat:@"%@/deleteUser/%@", self.apiURL, userid];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
         
@@ -166,7 +192,7 @@
 
 - (void) deserializeJsonString:(NSString *)json
 {
-    NSLog(@"json::%@",json);
+   
     
     if(isGetUsers)
     {
@@ -226,7 +252,9 @@
 {
     [responseData appendData:data];
     NSString *jsonString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    //NSLog(@"json::%@", jsonString);
+    NSLog(@"json::%@", jsonString);
+    
+  
     
     [self deserializeJsonString:jsonString];
     

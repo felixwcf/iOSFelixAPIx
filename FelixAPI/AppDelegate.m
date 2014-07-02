@@ -12,6 +12,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    // Set the application defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObject:@"NO"
+                                                            forKey:@"isEntityFrameworkAPI"];
+    [defaults registerDefaults:appDefaults];
+    [defaults synchronize];
+    
     return YES;
 }
 

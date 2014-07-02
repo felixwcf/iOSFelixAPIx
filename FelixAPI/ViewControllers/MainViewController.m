@@ -47,8 +47,14 @@
     self.navigationItem.rightBarButtonItem=btnItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
+
     APIController *apiController = [[APIController alloc] init];
     apiController.delegate = self;
     [apiController getUserAPICall];

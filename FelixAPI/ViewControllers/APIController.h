@@ -16,6 +16,9 @@
 -(void) didRemoveUser:(BOOL ) removed;
 @end
 
+extern NSString * const NORMAL_API;
+extern NSString * const ENTITY_FRAMEWORK_API;
+
 @interface APIController : UIViewController<NSURLConnectionDelegate>
 {
     NSMutableData *responseData;
@@ -26,6 +29,10 @@
     BOOL isAddNewUser;
     BOOL isUpdateUser;
     BOOL isRemoveUser;
+    
+    BOOL isEntityFrameworkAPI;
+    NSString *apiURL;
+    
 }
 
 - (void) getUserAPICall;
@@ -42,5 +49,7 @@
 @property (retain, nonatomic) NSMutableData *responseData;
 @property (assign, nonatomic) BOOL isGetUsers;
 @property (assign, nonatomic) BOOL isCheckUserAvailibility;
+@property (assign, nonatomic) BOOL isEntityFrameworkAPI;
+@property (retain, nonatomic) NSString *apiURL;
 
 @end

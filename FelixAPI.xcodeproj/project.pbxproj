@@ -32,6 +32,7 @@
 		F92E29A41962E234001C9372 /* icon_userNotAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = F92E29A11962E234001C9372 /* icon_userNotAvailable.png */; };
 		F92E29A71962E2A3001C9372 /* AddUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92E29A61962E2A3001C9372 /* AddUserTableViewCell.m */; };
 		F92E29AA1962FF1E001C9372 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F92E29A91962FF1E001C9372 /* Reachability.m */; };
+		F94E9B7B196474EB00DDD3B2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F94E9B7A196474EB00DDD3B2 /* Settings.bundle */; };
 		F96856DA195AB22E00EC44B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856D9195AB22E00EC44B4 /* Foundation.framework */; };
 		F96856DC195AB22E00EC44B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */; };
 		F96856DE195AB22E00EC44B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96856DD195AB22E00EC44B4 /* UIKit.framework */; };
@@ -97,6 +98,7 @@
 		F92E29A61962E2A3001C9372 /* AddUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddUserTableViewCell.m; path = SubClasses/AddUserTableViewCell.m; sourceTree = "<group>"; };
 		F92E29A81962FF1E001C9372 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		F92E29A91962FF1E001C9372 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F94E9B7A196474EB00DDD3B2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		F96856D6195AB22E00EC44B4 /* FelixAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FelixAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96856D9195AB22E00EC44B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F96856DB195AB22E00EC44B4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -208,6 +210,7 @@
 				F96856E2195AB22E00EC44B4 /* InfoPlist.strings */,
 				F96856E5195AB22E00EC44B4 /* main.m */,
 				F96856E7195AB22E00EC44B4 /* FelixAPI-Prefix.pch */,
+				F94E9B7A196474EB00DDD3B2 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			path = FelixAPI;
@@ -379,6 +382,7 @@
 				F92E29A31962E234001C9372 /* icon_userAvailable.png in Resources */,
 				F92E299E1962D804001C9372 /* AddUserViewController.xib in Resources */,
 				F91A16F21961ACFF0080AC65 /* icon_phone.png in Resources */,
+				F94E9B7B196474EB00DDD3B2 /* Settings.bundle in Resources */,
 				F96856E4195AB22E00EC44B4 /* InfoPlist.strings in Resources */,
 				F9158D77195AFD1600B4EC36 /* UserDetailViewController.xib in Resources */,
 				F9158D84195B049A00B4EC36 /* lineDot.png in Resources */,
