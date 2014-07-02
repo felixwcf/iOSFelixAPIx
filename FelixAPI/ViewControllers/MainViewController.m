@@ -107,10 +107,11 @@
         
         //Male or Female
         NSString *gender = [rowData objectForKey:@"GENDER"];
-        if([gender isEqualToString:@"F"])
-            cell.imgVwPic.image = [UIImage imageNamed:@"femalePic.png"];
-        else
+        if(gender == (id)[NSNull null] || [gender isEqualToString:@"M"])
             cell.imgVwPic.image = [UIImage imageNamed:@"malePic.png"];
+        else
+            cell.imgVwPic.image = [UIImage imageNamed:@"femalePic.png"];
+        
         
         cell.lblName.text = [NSString stringWithFormat:@"%@ %@",[rowData objectForKey:@"FIRST_NAME"], [rowData objectForKey:@"LAST_NAME"]] ;
         cell.lblID.text = [NSString stringWithFormat:@"@%@", [rowData objectForKey:@"USER_ID"]];
@@ -161,12 +162,14 @@
 
 - (void)didGetUserAvailibility:(BOOL)valid
 {
-    
 }
 
 - (void)didCreatedNewUser:(BOOL)saved
 {
-    
+}
+
+-(void)didUpdateUser:(BOOL)updated
+{
 }
 
 @end

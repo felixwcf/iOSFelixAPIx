@@ -31,6 +31,18 @@
 @synthesize DOB;
 @synthesize Address;
 @synthesize ProfilePic;
+@synthesize saveBarButtonItem;
+@synthesize apiController;
+
+@synthesize txtFldFirstName;
+@synthesize txtFldLastName;
+@synthesize txtFldPhone;
+@synthesize txtFldEmail;
+@synthesize txtFldGender;
+@synthesize txtFldAddress;
+@synthesize txtFldDOB;
+@synthesize txtFldCity;
+@synthesize txtFldPostcode;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,13 +56,58 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    saveBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(updateUserDetail)];
+    
+    apiController = [[APIController alloc] init];
+    apiController.delegate = self;
+    
     // Do any additional setup after loading the view from its nib.
+    self.Phone = @"";
+    self.Email = @"";
+    
+    txtFldFirstName.text = @"";
+    txtFldLastName.text = @"";
+    txtFldPhone.text = @"";
+    txtFldEmail.text = @"";
+    txtFldGender.text = @"";
+    txtFldAddress.text = @"";
+    txtFldDOB.text = @"";
+    txtFldCity.text = @"";
+    txtFldPostcode.text = @"";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) updateUserDetail
+{
+    [self.navigationItem setRightBarButtonItem:nil];
+    
+    if(apiController == nil)
+    {
+        apiController = [[APIController alloc] init];
+        apiController.delegate = self;
+    }
+    
+    
+    if([txtFldGender.text isEqualToString:@""])
+        txtFldGender.text = self.Gender;
+    
+    [apiController updateUserWithUserID:self.UserId
+                           firstName:txtFldFirstName.text
+                            LastName:txtFldLastName.text
+                            phoneNum:txtFldPhone.text
+                               email:txtFldEmail.text
+                              gender:self.Gender
+                                 dob:txtFldDOB.text
+                             address:txtFldAddress.text
+                                city:txtFldCity.text
+                            postcode:txtFldPostcode.text];
+    
 }
 
 #pragma mark - TableView Delegates
@@ -118,10 +175,24 @@
         }
         
         cell2.lblID.text = [NSString stringWithFormat:@"@%@", self.UserId];
+        
+        self.txtFldFirstName = cell2.txtFldFirstName;
         cell2.txtFldFirstName.text = [NSString stringWithFormat:@"%@", self.FirstName];
+        
+        self.txtFldLastName = cell2.txtFldLastName;
         cell2.txtFldLastName.text = [NSString stringWithFormat:@"%@", self.LastName];
-        cell2.txtFldPhone.text = [NSString stringWithFormat:@"%@", self.Phone];
-        cell2.txtFldEmail.text = [NSString stringWithFormat:@"%@", self.Email];
+        
+        self.txtFldPhone = cell2.txtFldPhone;
+        if([self.Phone isEqualToString:@""])
+            cell2.txtFldPhone.placeholder = @"Insert phone number here.";
+        else
+            cell2.txtFldPhone.text = [NSString stringWithFormat:@"%@", self.Phone];
+        
+        self.txtFldEmail = cell2.txtFldEmail;
+        if([self.Email isEqualToString:@""])
+            cell2.txtFldEmail.placeholder = @"Insert email here.";
+        else
+            cell2.txtFldEmail.text = [NSString stringWithFormat:@"%@", self.Email];
         
         cell2.txtFldFirstName.delegate = self;
         cell2.txtFldLastName.delegate = self;
@@ -141,7 +212,7 @@
             [cell3 setBackgroundColor:[UIColor clearColor]];
         }
         
-        //cell3.txtFldDOB.text = [NSString stringWithFormat:@"%@", self.DOB];
+        self.txtFldDOB = cell3.txtFldDOB;
         if(self.DOB == (id)[NSNull null])
             cell3.txtFldDOB.placeholder = @"Insert date of birth here.";
         else
@@ -151,14 +222,26 @@
         _txtVwAddress = cell3.txtFldAddress;
         _txtVwAddress.delegate = self;
         [self addDoneToolBarToKeyboard:_txtVwAddress];
-        if(self.Address == (id)[NSNull null] || [self.Address isEqualToString:@""])
+        if(self.Address == (id)[NSNull null])
             cell3.txtFldAddress.placeholder = @"Insert address here.";
         else
             cell3.txtFldAddress.text = [NSString stringWithFormat:@"%@", self.Address];
         
+        self.txtFldCity = cell3.txtFldCity;
+        if(self.City != (id)[NSNull null])
+            cell3.txtFldCity.text = [NSString stringWithFormat:@"%@", self.City];
+        else
+            cell3.txtFldCity.placeholder = @"Insert city here.";
         
-        cell3.txtFldCity.text = [NSString stringWithFormat:@"%@", self.City];
-        cell3.txtFldPostcode.text = [NSString stringWithFormat:@"%@", self.Postcode];
+        self.txtFldPostcode = cell3.txtFldPostcode;
+        if(self.Postcode != (id)[NSNull null])
+            cell3.txtFldPostcode.text = [NSString stringWithFormat:@"%@", self.Postcode];
+        else
+            cell3.txtFldPostcode.placeholder = @"Insert postcode here.";
+        
+        cell3.txtFldCity.delegate = self;
+        cell3.txtFldDOB.delegate = self;
+        cell3.txtFldPostcode.delegate = self;
         
         return cell3;
     }
@@ -184,6 +267,16 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    [self.navigationItem setRightBarButtonItem:saveBarButtonItem];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self.navigationItem setRightBarButtonItem:saveBarButtonItem];
 }
 
 #pragma mark - Custom TextView Toolbar
@@ -216,5 +309,44 @@
     [_txtVwAddress resignFirstResponder];
 }
 
+#pragma mark - Custom Delegates
+/* -------------------------------------------------
+ *            Custom Delegates
+ --------------------------------------------------*/
+- (void) didGetUsersData:(NSMutableArray *)usersArray
+{
+}
+
+- (void)didGetUserAvailibility:(BOOL)valid
+{
+}
+
+-(void) didCreatedNewUser:(BOOL )saved
+{
+}
+
+-(void) didUpdateUser:(BOOL ) updated
+{
+    if(updated)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:nil
+                              message:@"User detail updated"
+                              delegate:self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Fail update user"
+                              message:@"Please try again."
+                              delegate:self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
 
 @end

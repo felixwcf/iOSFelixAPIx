@@ -73,23 +73,22 @@
     
     isAddNewUser = YES;
     responseData = [[NSMutableData alloc] init];
+
     NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:userid, @"USER_ID",
-                                                                    fName, @"FIRST_NAME",
-                                                                    lName, @"LAST_NAME",
-                                                                    phone, @"PHONE",
-                                                                    email, @"EMAIL",
-                                                                    gender, @"GENDER",
-                                                                    dob, @"DOB",
-                                                                    address, @"ADDRESS",
-                                                                    city, @"CITY",
-                                                                    postcode, @"ZIPCODE",
-                                                                    nil];
-    
+                          fName, @"FIRST_NAME",
+                          lName, @"LAST_NAME",
+                          phone ?: [NSNull null], @"PHONE",
+                          city ?: [NSNull null], @"CITY",
+                          email ?: [NSNull null], @"EMAIL",
+                          gender ?: [NSNull null], @"GENDER",
+                          dob ?: [NSNull null], @"DOB",
+                          address ?: [NSNull null], @"ADDRESS",
+                          postcode ?: [NSNull null], @"ZIPCODE",
+                          nil];
 
     NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:0 error:nil];
-//    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-
-//    NSLog(@"new json::%@",jsonString);
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"new json::%@",jsonString);
     
     
     NSURL *url = [NSURL URLWithString:@"http://192.168.0.103:9000/api/addUser"];
@@ -100,6 +99,55 @@
     
     (void) [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
+}
+
+- (void) updateUserWithUserID:(NSString *)userid firstName:(NSString *)fName LastName:(NSString *)lName
+                  phoneNum:(NSString *)phone email:(NSString *)_email gender:(NSString *)_gender dob:(NSString *)_dob address:(NSString *)_address city:(NSString *)_city
+                  postcode:(NSString *)_postcode
+{
+    
+    NSLog(@"city:%@",_city);
+    
+    isUpdateUser = YES;
+    responseData = [[NSMutableData alloc] init];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:fName, @"FIRST_NAME",
+                          lName, @"LAST_NAME",
+                          phone ?: [NSNull null], @"PHONE",
+                          _city ?: [NSNull null], @"CITY",
+                          _email ?: [NSNull null], @"EMAIL",
+                          _gender ?: [NSNull null], @"GENDER",
+                          _dob ?: [NSNull null], @"DOB",
+                          _address ?: [NSNull null], @"ADDRESS",
+                          _postcode ?: [NSNull null], @"ZIPCODE",
+                          nil];
+    
+//    NSDictionary *dict = [[NSDictionary alloc] init];
+//    
+//    dict = @{ @"LAST_NAME": lName,
+//              @"FIRST_NAME" : fName,
+//              @"PHONE" : phone,
+//              @"EMAIL" : _email,
+//              @"GENDER" : _gender,
+//              @"DOB" : _dob,
+//              @"ADDRESS" : _address,
+//              @"CITY" : _city,
+//              @"ZIPCODE" : _postcode,
+//           };
+    
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+      NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+       NSLog(@"new json::%@",jsonString);
+    NSLog(@"userid::%@",userid);
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://192.168.0.103:9000/api/updateUser/%@", userid];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
+    [request setHTTPMethod:@"PUT"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
+    [request setHTTPBody:data];
+    
+    (void) [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 - (void) deserializeJsonString:(NSString *)json
@@ -127,6 +175,13 @@
         else
             [self.delegate didCreatedNewUser:NO];
     }
+    else if(isUpdateUser)
+    {
+        if([json isEqualToString:@"OK"])
+            [self.delegate didUpdateUser:YES];
+        else
+            [self.delegate didUpdateUser:NO];
+    }
 }
 
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -150,6 +205,7 @@
     isGetUsers = NO;
     isCheckUserAvailibility = NO;
     isAddNewUser = NO;
+    isUpdateUser = NO;
     responseData = nil;
 }
 
@@ -158,6 +214,7 @@
     isGetUsers = NO;
     isCheckUserAvailibility = NO;
     isAddNewUser = NO;
+    isUpdateUser = NO;
     responseData = nil;
 }
 

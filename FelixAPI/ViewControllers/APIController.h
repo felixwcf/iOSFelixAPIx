@@ -12,6 +12,7 @@
 -(void) didGetUsersData:(NSMutableArray *)usersArray;
 -(void) didGetUserAvailibility:(BOOL )valid;
 -(void) didCreatedNewUser:(BOOL )saved;
+-(void) didUpdateUser:(BOOL ) updated;
 @end
 
 @interface APIController : UIViewController<NSURLConnectionDelegate>
@@ -22,6 +23,7 @@
     BOOL isGetUsers;
     BOOL isCheckUserAvailibility;
     BOOL isAddNewUser;
+    BOOL isUpdateUser;
 }
 
 - (void) getUserAPICall;
@@ -29,6 +31,9 @@
 - (void) addUserWithUserID:(NSString *)userid firstName:(NSString *)fName LastName:(NSString *)lName
                   phoneNum:(NSString *)phone email:(NSString *)email gender:(NSString *)gender dob:(NSString *)dob address:(NSString *)address city:(NSString *)city
                   postcode:(NSString *)postcode;
+- (void) updateUserWithUserID:(NSString *)userid firstName:(NSString *)fName LastName:(NSString *)lName
+                     phoneNum:(NSString *)phone email:(NSString *)email gender:(NSString *)gender dob:(NSString *)dob address:(NSString *)address city:(NSString *)city
+                     postcode:(NSString *)postcode;
 
 @property (nonatomic, retain) id<APIControllerDelegate> delegate;
 @property (retain, nonatomic) NSMutableData *responseData;

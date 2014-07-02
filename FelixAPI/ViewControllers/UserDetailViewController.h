@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIController.h"
 
 @interface UserDetailViewController : UIViewController
-<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UITextFieldDelegate, UITextViewDelegate>
+<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UITextFieldDelegate, UITextViewDelegate, APIControllerDelegate>
 {
     IBOutlet UITableView *dataTableView;
     
@@ -26,7 +27,20 @@
     NSString *Address;
     UIImageView *ProfilePic;
     
+    UITextField *txtFldFirstName;
+    UITextField *txtFldLastName;
+    UITextField *txtFldPhone;
+    UITextField *txtFldEmail;
+    UITextField *txtFldGender;
+    UITextField *txtFldAddress;
+    UITextField *txtFldDOB;
+    UITextField *txtFldCity;
+    UITextField *txtFldPostcode;
+    
     UITextView *_txtVwAddress;
+    
+    UIBarButtonItem *saveBarButtonItem;
+    APIController *apiController;
     
 }
 
@@ -45,4 +59,16 @@
 @property(retain, nonatomic) NSString *Address;
 @property(retain, nonatomic) UIImageView *ProfilePic;
 
+@property(retain, nonatomic) UITextField *txtFldFirstName;
+@property(retain, nonatomic) UITextField *txtFldLastName;
+@property(retain, nonatomic) UITextField *txtFldPhone;
+@property(retain, nonatomic) UITextField *txtFldEmail;
+@property(retain, nonatomic) UITextField *txtFldGender;
+@property(retain, nonatomic) UITextField *txtFldAddress;
+@property(retain, nonatomic) UITextField *txtFldDOB;
+@property(retain, nonatomic) UITextField *txtFldCity;
+@property(retain, nonatomic) UITextField *txtFldPostcode;
+
+@property(retain, nonatomic) UIBarButtonItem *saveBarButtonItem;
+@property(retain, nonatomic) APIController *apiController;
 @end

@@ -29,12 +29,14 @@
         lblName = [[UILabel alloc] initWithFrame:CGRectMake(90, 5, 200, 20)];
         lblName.textAlignment = NSTextAlignmentLeft;
         lblName.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17.0];
+        lblName.text = @"";
         lblName.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         [lblName setBackgroundColor:[UIColor clearColor]];
         
         lblID = [[UILabel alloc] initWithFrame:CGRectMake(90, 23, 160, 20)];
         [lblID setBackgroundColor:[UIColor clearColor]];
         lblID.textAlignment = NSTextAlignmentLeft;
+        lblID.text = @"";
         lblID.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0];
         lblID.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         [lblID setBackgroundColor:[UIColor clearColor]];
@@ -42,6 +44,7 @@
         lblPhoneNum = [[UILabel alloc] initWithFrame:CGRectMake(90, 42, 160, 20)];
         [lblPhoneNum setBackgroundColor:[UIColor clearColor]];
         lblPhoneNum.textAlignment = NSTextAlignmentLeft;
+        lblPhoneNum.text = @"";
         lblPhoneNum.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17.0];
         lblPhoneNum.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         [lblPhoneNum setBackgroundColor:[UIColor clearColor]];

@@ -70,6 +70,15 @@
             apiController.delegate = self;
         }
         
+        if([txtFldGender.text isEqualToString:@"F"])
+        {
+            txtFldGender.text = @"F";
+        }
+        else if([txtFldGender.text isEqualToString:@"M"])
+            txtFldGender.text = @"M";
+        else
+            txtFldGender.text = @"M";
+        
         [apiController addUserWithUserID:txtFldUserID.text
                                firstName:txtFldFirstName.text
                                 LastName:txtFldLastName.text
@@ -209,7 +218,8 @@
 {
     if(alertView.tag == 100)
     {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        NSLog(@"dismiss");
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
@@ -242,6 +252,7 @@
                               delegate:self
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil, nil];
+        alert.delegate =self;
         [alert setTag:100];
         [alert show];
         
@@ -256,6 +267,10 @@
                               otherButtonTitles:nil, nil];
         [alert show];
     }
+}
+
+- (void)didUpdateUser:(BOOL)updated
+{
 }
 
 

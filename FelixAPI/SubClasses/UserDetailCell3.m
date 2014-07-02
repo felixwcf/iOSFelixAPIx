@@ -27,6 +27,8 @@
         txtFldDOB.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
         txtFldDOB.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         txtFldDOB.returnKeyType = UIReturnKeyDone;
+        txtFldDOB.autocorrectionType = UITextAutocorrectionTypeNo;
+        txtFldDOB.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [txtFldDOB setBackgroundColor:[UIColor clearColor]];
         
         txtFldAddress = [[UICustomTextView alloc] initWithFrame:CGRectMake(52, 51, 240, 100)];
@@ -34,6 +36,8 @@
         txtFldAddress.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
         txtFldAddress.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         txtFldAddress.returnKeyType = UIReturnKeyDone;
+        txtFldAddress.autocorrectionType = UITextAutocorrectionTypeNo;
+        txtFldAddress.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [txtFldAddress setBackgroundColor:[UIColor clearColor]];
         txtFldAddress.placeholderColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.80 alpha:1.0];
         
@@ -41,6 +45,8 @@
         txtFldCity.textAlignment = NSTextAlignmentLeft;
         txtFldCity.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
         txtFldCity.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
+        txtFldCity.autocorrectionType = UITextAutocorrectionTypeNo;
+        txtFldCity.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [txtFldCity setBackgroundColor:[UIColor clearColor]];
         
         txtFldPostcode = [[UITextField alloc] initWithFrame:CGRectMake(60, 215, 300, 32)];
@@ -48,6 +54,8 @@
         txtFldPostcode.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
         txtFldPostcode.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         txtFldPostcode.returnKeyType = UIReturnKeyDone;
+        txtFldPostcode.autocorrectionType = UITextAutocorrectionTypeNo;
+        txtFldPostcode.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [txtFldPostcode setBackgroundColor:[UIColor clearColor]];
         
         icon_dob = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_dob.png"]];

@@ -32,6 +32,8 @@
         txtFldFirstName.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:22.0];
         txtFldFirstName.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         txtFldFirstName.returnKeyType = UIReturnKeyDone;
+        txtFldFirstName.autocorrectionType = UITextAutocorrectionTypeNo;
+        txtFldFirstName.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [txtFldFirstName setBackgroundColor:[UIColor clearColor]];
         
         txtFldLastName = [[UITextField alloc] initWithFrame:CGRectMake(18, 80, 240, 32)];
@@ -39,20 +41,29 @@
         txtFldLastName.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:22.0];
         txtFldLastName.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         txtFldLastName.returnKeyType = UIReturnKeyDone;
+        txtFldLastName.autocorrectionType = UITextAutocorrectionTypeNo;
+        txtFldLastName.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [txtFldLastName setBackgroundColor:[UIColor clearColor]];
         
         txtFldPhone = [[UITextField alloc] initWithFrame:CGRectMake(60, 123, 240, 32)];
         txtFldPhone.textAlignment = NSTextAlignmentLeft;
+        txtFldPhone.text = @"";
         txtFldPhone.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
         txtFldPhone.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
         txtFldPhone.returnKeyType = UIReturnKeyDone;
+        txtFldPhone.autocorrectionType = UITextAutocorrectionTypeNo;
+        txtFldPhone.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [txtFldPhone setBackgroundColor:[UIColor clearColor]];
         
         txtFldEmail = [[UITextField alloc] initWithFrame:CGRectMake(60, 163, 300, 32)];
         txtFldEmail.textAlignment = NSTextAlignmentLeft;
+        txtFldEmail.text = @"";
         txtFldEmail.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
         txtFldEmail.textColor = [UIColor colorWithRed:0.275 green:0.275 blue:0.275 alpha:0.9];
+        txtFldEmail.keyboardType = UIKeyboardTypeEmailAddress;
         txtFldEmail.returnKeyType = UIReturnKeyDone;
+        txtFldEmail.autocorrectionType = UITextAutocorrectionTypeNo;
+        txtFldEmail.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [txtFldEmail setBackgroundColor:[UIColor clearColor]];
         
         icon_phone = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_phone.png"]];
