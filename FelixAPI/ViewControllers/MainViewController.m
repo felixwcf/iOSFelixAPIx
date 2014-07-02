@@ -19,6 +19,7 @@
 @synthesize dataTableView;
 @synthesize dataArray;
 @synthesize lblNoData;
+@synthesize removeUserId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -146,6 +147,45 @@
     [self.navigationController pushViewController:usrDetailViewController animated:YES];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        NSMutableDictionary *rowData = [[NSMutableDictionary alloc] init];
+        rowData = [dataArray objectAtIndex:indexPath.row];
+
+        self.removeUserId = [rowData objectForKey:@"USER_ID"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"Are you sure you want to delete this user?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"No"
+                                              otherButtonTitles:@"Delete",
+                              nil];
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"Delete"])
+    {
+        NSLog(@"Delete button selected. Delete the data");
+        APIController *apiController = [[APIController alloc] init];
+        apiController.delegate =self;
+        [apiController removeUserFromServer:self.removeUserId];
+    }
+    
+}
+
 
 
 #pragma mark - Custom Delegates
@@ -168,8 +208,38 @@
 {
 }
 
--(void)didUpdateUser:(BOOL)updated
+- (void)didUpdateUser:(BOOL)updated
 {
+}
+
+- (void)didRemoveUser:(BOOL)removed
+{
+    if(removed)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:nil
+                              message:[NSString stringWithFormat:@"User %@ has been removed", self.removeUserId]
+                              delegate:self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil, nil];
+        [alert setTag:101];
+        [alert show];
+        
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Remove User Fail"
+                              message:@"Please try again."
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    
+    APIController *apiController = [[APIController alloc] init];
+    apiController.delegate = self;
+    [apiController getUserAPICall];
 }
 
 @end

@@ -44,12 +44,15 @@
 
 - (void)getUserAPICall
 {
-    isGetUsers = YES;
-    responseData = [[NSMutableData alloc] init];
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.103:9000/api/users"];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
-    
-    (void) [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+    if(ReachableViaWiFi || ReachableViaWWAN)
+    {
+        isGetUsers = YES;
+        responseData = [[NSMutableData alloc] init];
+        NSURL *url = [NSURL URLWithString:@"http://192.168.0.103:9000/api/users"];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
+        
+        (void) [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+    }
 }
 
 - (void)checkUserAvailability:(NSString *)userId
@@ -64,6 +67,8 @@
         
         (void) [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
     }
+    else
+        [self showNoInternetAlert];
 }
 
 - (void) addUserWithUserID:(NSString *)userid firstName:(NSString *)fName LastName:(NSString *)lName
@@ -71,83 +76,92 @@
                             postcode:(NSString *)postcode
 {
     
-    isAddNewUser = YES;
-    responseData = [[NSMutableData alloc] init];
+    if(ReachableViaWiFi || ReachableViaWWAN)
+    {
+        isAddNewUser = YES;
+        responseData = [[NSMutableData alloc] init];
 
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:userid, @"USER_ID",
-                          fName, @"FIRST_NAME",
-                          lName, @"LAST_NAME",
-                          phone ?: [NSNull null], @"PHONE",
-                          city ?: [NSNull null], @"CITY",
-                          email ?: [NSNull null], @"EMAIL",
-                          gender ?: [NSNull null], @"GENDER",
-                          dob ?: [NSNull null], @"DOB",
-                          address ?: [NSNull null], @"ADDRESS",
-                          postcode ?: [NSNull null], @"ZIPCODE",
-                          nil];
+        NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:userid, @"USER_ID",
+                              fName, @"FIRST_NAME",
+                              lName, @"LAST_NAME",
+                              phone ?: [NSNull null], @"PHONE",
+                              city ?: [NSNull null], @"CITY",
+                              email ?: [NSNull null], @"EMAIL",
+                              gender ?: [NSNull null], @"GENDER",
+                              dob ?: [NSNull null], @"DOB",
+                              address ?: [NSNull null], @"ADDRESS",
+                              postcode ?: [NSNull null], @"ZIPCODE",
+                              nil];
 
-    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:0 error:nil];
-    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"new json::%@",jsonString);
-    
-    
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.103:9000/api/addUser"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
-    [request setHTTPMethod:@"POST"];
-    [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
-    [request setHTTPBody:data];
-    
-    (void) [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
+        NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:0 error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"new json::%@",jsonString);
+        
+        
+        NSURL *url = [NSURL URLWithString:@"http://192.168.0.103:9000/api/addUser"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
+        [request setHTTPMethod:@"POST"];
+        [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
+        [request setHTTPBody:data];
+        
+        (void) [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    }
+    else
+        [self showNoInternetAlert];
 }
 
 - (void) updateUserWithUserID:(NSString *)userid firstName:(NSString *)fName LastName:(NSString *)lName
-                  phoneNum:(NSString *)phone email:(NSString *)_email gender:(NSString *)_gender dob:(NSString *)_dob address:(NSString *)_address city:(NSString *)_city
-                  postcode:(NSString *)_postcode
+                  phoneNum:(NSString *)phone email:(NSString *)email gender:(NSString *)gender dob:(NSString *)dob address:(NSString *)address city:(NSString *)city
+                  postcode:(NSString *)postcode
 {
-    
-    NSLog(@"city:%@",_city);
-    
-    isUpdateUser = YES;
-    responseData = [[NSMutableData alloc] init];
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:fName, @"FIRST_NAME",
-                          lName, @"LAST_NAME",
-                          phone ?: [NSNull null], @"PHONE",
-                          _city ?: [NSNull null], @"CITY",
-                          _email ?: [NSNull null], @"EMAIL",
-                          _gender ?: [NSNull null], @"GENDER",
-                          _dob ?: [NSNull null], @"DOB",
-                          _address ?: [NSNull null], @"ADDRESS",
-                          _postcode ?: [NSNull null], @"ZIPCODE",
-                          nil];
-    
-//    NSDictionary *dict = [[NSDictionary alloc] init];
-//    
-//    dict = @{ @"LAST_NAME": lName,
-//              @"FIRST_NAME" : fName,
-//              @"PHONE" : phone,
-//              @"EMAIL" : _email,
-//              @"GENDER" : _gender,
-//              @"DOB" : _dob,
-//              @"ADDRESS" : _address,
-//              @"CITY" : _city,
-//              @"ZIPCODE" : _postcode,
-//           };
-    
-    
-    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
-      NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-       NSLog(@"new json::%@",jsonString);
-    NSLog(@"userid::%@",userid);
-    
-    NSString *urlString = [NSString stringWithFormat:@"http://192.168.0.103:9000/api/updateUser/%@", userid];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
-    [request setHTTPMethod:@"PUT"];
-    [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
-    [request setHTTPBody:data];
-    
-    (void) [[NSURLConnection alloc] initWithRequest:request delegate:self];
+
+    if(ReachableViaWiFi || ReachableViaWWAN)
+    {
+        isUpdateUser = YES;
+        responseData = [[NSMutableData alloc] init];
+        NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:fName, @"FIRST_NAME",
+                              lName, @"LAST_NAME",
+                              phone ?: [NSNull null], @"PHONE",
+                              city ?: [NSNull null], @"CITY",
+                              email ?: [NSNull null], @"EMAIL",
+                              gender ?: [NSNull null], @"GENDER",
+                              dob ?: [NSNull null], @"DOB",
+                              address ?: [NSNull null], @"ADDRESS",
+                              postcode ?: [NSNull null], @"ZIPCODE",
+                              nil];
+
+        NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+          NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+           NSLog(@"new json::%@",jsonString);
+        NSLog(@"userid::%@",userid);
+        
+        NSString *urlString = [NSString stringWithFormat:@"http://192.168.0.103:9000/api/updateUser/%@", userid];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
+        [request setHTTPMethod:@"PUT"];
+        [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
+        [request setHTTPBody:data];
+        
+        (void) [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    }
+    else
+        [self showNoInternetAlert];
+}
+
+- (void) removeUserFromServer:(NSString *)userid
+{
+    if(ReachableViaWiFi || ReachableViaWWAN)
+    {
+        isRemoveUser = YES;
+        responseData = [[NSMutableData alloc] init];
+        NSString *urlString = [NSString stringWithFormat:@"http://192.168.0.103:9000/api/deleteUser/%@", userid];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
+        
+        (void) [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+    }
+    else
+        [self showNoInternetAlert];
 }
 
 - (void) deserializeJsonString:(NSString *)json
@@ -182,6 +196,24 @@
         else
             [self.delegate didUpdateUser:NO];
     }
+    else if(isRemoveUser)
+    {
+        if([json isEqualToString:@"OK"])
+            [self.delegate didRemoveUser:YES];
+        else
+            [self.delegate didRemoveUser:NO];
+    }
+}
+
+- (void) showNoInternetAlert
+{
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"No Internet Connection"
+                          message:@"Turn on your Internet connection and try again."
+                          delegate:self
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -206,6 +238,7 @@
     isCheckUserAvailibility = NO;
     isAddNewUser = NO;
     isUpdateUser = NO;
+    isRemoveUser = NO;
     responseData = nil;
 }
 
@@ -215,6 +248,7 @@
     isCheckUserAvailibility = NO;
     isAddNewUser = NO;
     isUpdateUser = NO;
+    isRemoveUser = NO;
     responseData = nil;
 }
 

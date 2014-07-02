@@ -17,10 +17,12 @@
     NSMutableArray *dataArray;
     
     IBOutlet UINavigationBar *navBar;
+    
+    NSString *removeUserId;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *dataTableView;
 @property (nonatomic, retain) IBOutlet UILabel *lblNoData;
 @property (nonatomic, strong) NSMutableArray *dataArray;
-
+@property (nonatomic, strong) NSString *removeUserId;
 @end

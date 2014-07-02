@@ -273,5 +273,9 @@
 {
 }
 
+- (void)didRemoveUser:(BOOL)removed
+{
+}
+
 
 @end
