@@ -14,8 +14,8 @@
 
 @end
 
-NSString * const NORMAL_API = @"http://192.168.0.103:9000/api";
-NSString * const ENTITY_FRAMEWORK_API = @"http://192.168.0.103:51122/api";
+NSString * const NORMAL_API = @"http://192.168.0.103:51122/api";
+NSString * const ENTITY_FRAMEWORK_API = @"http://192.168.0.103:9000/api";
 
 @implementation APIController
 @synthesize responseData;
@@ -147,12 +147,13 @@ NSString * const ENTITY_FRAMEWORK_API = @"http://192.168.0.103:51122/api";
         responseData = [[NSMutableData alloc] init];
         NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:fName, @"FIRST_NAME",
                               lName, @"LAST_NAME",
-                              phone ?: [NSNull null], @"PHONE",
-                              city ?: [NSNull null], @"CITY",
                               email ?: [NSNull null], @"EMAIL",
                               gender ?: [NSNull null], @"GENDER",
+                              phone ?: [NSNull null], @"PHONE",
                               dob ?: [NSNull null], @"DOB",
                               address ?: [NSNull null], @"ADDRESS",
+                              city ?: [NSNull null], @"CITY",
+                              @"", @"STATE",
                               postcode ?: [NSNull null], @"ZIPCODE",
                               nil];
 
@@ -252,9 +253,22 @@ NSString * const ENTITY_FRAMEWORK_API = @"http://192.168.0.103:51122/api";
 {
     [responseData appendData:data];
     NSString *jsonString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    if(!isEntityFrameworkAPI && isGetUsers)
+    {
+        //Remove '\' character from string
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+        
+        //Remove first character from string
+        jsonString = [jsonString substringFromIndex:1];
+        //Remove last character from string
+        if ([jsonString length] > 0) {
+            jsonString = [jsonString substringToIndex:[jsonString length] - 1];
+        }
+    }
+    
     NSLog(@"json::%@", jsonString);
     
-  
     
     [self deserializeJsonString:jsonString];
     

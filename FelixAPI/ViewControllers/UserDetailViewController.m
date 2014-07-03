@@ -49,6 +49,19 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        txtFldFirstName.text = @"";
+        txtFldLastName.text = @"";
+        txtFldPhone.text = @"";
+        txtFldEmail.text = @"";
+        txtFldGender.text = @"";
+        txtFldAddress.text = @"";
+        txtFldDOB.text = @"";
+        txtFldCity.text = @"";
+        txtFldPostcode.text = @"";
+        
+        self.Phone = @"";
+        self.Email = @"";
+        self.DOB = @"";
     }
     return self;
 }
@@ -63,18 +76,9 @@
     apiController.delegate = self;
     
     // Do any additional setup after loading the view from its nib.
-    self.Phone = @"";
-    self.Email = @"";
+
     
-    txtFldFirstName.text = @"";
-    txtFldLastName.text = @"";
-    txtFldPhone.text = @"";
-    txtFldEmail.text = @"";
-    txtFldGender.text = @"";
-    txtFldAddress.text = @"";
-    txtFldDOB.text = @"";
-    txtFldCity.text = @"";
-    txtFldPostcode.text = @"";
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,7 +108,7 @@
                                email:txtFldEmail.text
                               gender:self.Gender
                                  dob:txtFldDOB.text
-                             address:txtFldAddress.text
+                             address:_txtVwAddress.text
                                 city:txtFldCity.text
                             postcode:txtFldPostcode.text];
     
@@ -182,14 +186,16 @@
         self.txtFldLastName = cell2.txtFldLastName;
         cell2.txtFldLastName.text = [NSString stringWithFormat:@"%@", self.LastName];
         
+        
+        NSLog(@"self.Phone:%@",self.Phone);
         self.txtFldPhone = cell2.txtFldPhone;
-        if([self.Phone isEqualToString:@""])
+        if(self.Phone == (id)[NSNull null] || self.Phone == nil)
             cell2.txtFldPhone.placeholder = @"Insert phone number here.";
         else
             cell2.txtFldPhone.text = [NSString stringWithFormat:@"%@", self.Phone];
         
         self.txtFldEmail = cell2.txtFldEmail;
-        if([self.Email isEqualToString:@""])
+        if(self.Email == (id)[NSNull null] || self.Email == nil)
             cell2.txtFldEmail.placeholder = @"Insert email here.";
         else
             cell2.txtFldEmail.text = [NSString stringWithFormat:@"%@", self.Email];
@@ -222,26 +228,39 @@
         _txtVwAddress = cell3.txtFldAddress;
         _txtVwAddress.delegate = self;
         [self addDoneToolBarToKeyboard:_txtVwAddress];
-        if(self.Address == (id)[NSNull null])
+        if(self.Address == (id)[NSNull null] || self.Address == nil)
             cell3.txtFldAddress.placeholder = @"Insert address here.";
         else
             cell3.txtFldAddress.text = [NSString stringWithFormat:@"%@", self.Address];
         
         self.txtFldCity = cell3.txtFldCity;
-        if(self.City != (id)[NSNull null])
+        if(self.City != (id)[NSNull null] || self.City == nil)
             cell3.txtFldCity.text = [NSString stringWithFormat:@"%@", self.City];
         else
             cell3.txtFldCity.placeholder = @"Insert city here.";
         
         self.txtFldPostcode = cell3.txtFldPostcode;
-        if(self.Postcode != (id)[NSNull null])
+        if(self.Postcode != (id)[NSNull null] || self.Postcode == nil)
             cell3.txtFldPostcode.text = [NSString stringWithFormat:@"%@", self.Postcode];
         else
             cell3.txtFldPostcode.placeholder = @"Insert postcode here.";
         
-        cell3.txtFldCity.delegate = self;
-        cell3.txtFldDOB.delegate = self;
-        cell3.txtFldPostcode.delegate = self;
+        cell3.txtFldCity.delegate = self; 
+        if(self.City != (id)[NSNull null] || self.City == nil)
+            cell3.txtFldCity.placeholder = @"Insert city here.";
+        else
+            cell3.txtFldCity.text = self.City;
+        
+//        cell3.txtFldDOB.delegate = self;
+//        if(self.DOB != (id)[NSNull null] || self.DOB == nil)
+//            cell3.txtFldDOB.placeholder = @"Insert birthday here.";
+//        else
+//            cell3.txtFldDOB.text = self.DOB;
+        
+        if(self.Postcode != (id)[NSNull null] || self.Postcode == nil)
+            cell3.txtFldPostcode.placeholder = @"Insert postcode here.";
+        else
+            cell3.txtFldPostcode.delegate = self;
         
         return cell3;
     }
@@ -250,16 +269,20 @@
 
 - (NSString *) convertToNiceDate:(NSString *) dateString
 {
+    if(dateString != nil)
+    {
+        // Convert string to date object
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+        NSDate *date = [dateFormat dateFromString:dateString];
+        
+        // Convert date object to desired output format
+        [dateFormat setDateFormat:@"dd-MM-yyyy"];
+        dateString = [dateFormat stringFromDate:date];
+    }
+    else
+        dateString = @"";
     
-    // Convert string to date object
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
-    NSDate *date = [dateFormat dateFromString:dateString];
-    
-    // Convert date object to desired output format
-    [dateFormat setDateFormat:@"dd-MM-yyyy"];
-    dateString = [dateFormat stringFromDate:date];
-
     return dateString;
 }
 
